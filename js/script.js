@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
 
+            newTask: '',
+
             tasks: [
 
                 {
@@ -34,7 +36,22 @@ createApp({
 
             this.tasks.splice(index, 1);
 
+        },
+
+        addTask() {
+
+            const newTask = {
+                text: this.newTask,
+                done: false,
+            };
+
+            this.tasks.push(newTask);
+            
+            this.newTask = "";
+
         }
+
+
 
     }
 
