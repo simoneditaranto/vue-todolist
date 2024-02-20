@@ -40,17 +40,19 @@ createApp({
 
         addTask() {
 
-            const newTask = {
-                text: this.newTask,
-                done: false,
-            };
+            if(this.newTask != '') {
+                const newTask = {
+                    text: this.newTask,
+                    done: false,
+                };
+    
+                this.tasks.push(newTask);
+            }
 
-            this.tasks.push(newTask);
             
             this.newTask = "";
 
-        }
-
+        },
 
 
     }

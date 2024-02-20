@@ -44,8 +44,8 @@
         </ol>
 
         <div class="input-group mb-3">
-            <input v-model="newTask" type="text" class="form-control" placeholder="Aggiungi attività" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button @click="addTask" class="btn btn-outline-secondary" type="button" id="button-addon2">Aggiungi</button>
+            <input v-model="newTask" type="text" class="form-control" placeholder="Aggiungi attività" aria-label="Recipient's username" aria-describedby="button-addon2" @keyup.enter="addTask()">
+            <button @click="addTask()"  class="btn btn-outline-secondary" type="button" id="button-addon2">Aggiungi</button>
         </div>
 
 
