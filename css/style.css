@@ -1,3 +1,8 @@
+.container {
+    background-color: rgba(150, 150, 0, 0.5);
+}
+
+
 .fa-xmark {
     font-size: 1.5em;
 
@@ -10,6 +15,33 @@ ol li {
     cursor: pointer;
 }
 
+ol li.complete{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
 .normal-text{
     text-decoration: none;
+}
+
+.fa-plus{
+    font-size: 1.5em;
+
+    color: rgb(6, 53, 24);
+}
+
+#add-todo{
+    display: flex;
+    gap: 10px;
+
+    padding: 10px 5px;
+
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#add-todo:hover{
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.5);
 }

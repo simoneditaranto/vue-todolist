@@ -24,30 +24,39 @@
     <!-- VUE 3 -->
     <script src="https://unpkg.com/vue@3"></script>
 
-    <div id="app" class="container">
+    <div id="app" class="container p-3 mt-5 rounded-4">
 
-        <h1 class="my-5">Todo List</h1>
+        <h1>Todo List</h1>
 
         <ol class="list-group list-group mb-4">
 
             <li v-for="(currentTask, index) in tasks"
             class="list-group-item d-flex justify-content-between align-items-start"
             @click="changeTaskComplete(index)"
-            
+            :class="currentTask.done ? 'complete' : '' "
             >
                 <div class="task-text"
                 :class="currentTask.done ? 'text-decoration-line-through' : 'normal-text' "
                 >
                     {{ currentTask.text }}
+                    <span>
+                        <i class="fa-regular fa-heart"></i></span>
                 </div>
                 <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>
             </li>
 
         </ol>
 
-        <div class="input-group mb-3">
+        <div v-show="inputVisible == true" 
+        class="input-group mb-3"
+        >
             <input v-model="newTask" type="text" class="form-control" placeholder="Aggiungi attività" aria-label="Recipient's username" aria-describedby="button-addon2" @keyup.enter="addTask()">
-            <button @click="addTask()"  class="btn btn-outline-secondary" type="button" id="button-addon2">Aggiungi</button>
+            <button @click="addTask(), hiddenInput()"  class="btn btn-outline-primary" type="button" id="button-addon2">Aggiungi</button>
+        </div>
+        
+        <div v-show="inputVisible == false" id="add-todo" @click="showInput()">
+            <i class="fa-solid fa-plus"></i>
+            <span>Aggiungi attività</span>
         </div>
 
 

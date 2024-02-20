@@ -6,6 +6,8 @@ createApp({
 
             newTask: '',
 
+            inputVisible: false,
+
             tasks: [
 
                 {
@@ -66,6 +68,18 @@ createApp({
             } else if(!this.tasks[index].done) {
                 this.tasks[index].done = true;
             }
+        },
+
+        showInput() {
+
+            this.inputVisible = true;
+
+        },
+
+        hiddenInput() {
+          
+            this.inputVisible = false;
+
         }
 
 
