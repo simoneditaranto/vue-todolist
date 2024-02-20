@@ -5,3 +5,11 @@
 
     cursor: pointer;
 }
+
+ol li {
+    cursor: pointer;
+}
+
+.normal-text{
+    text-decoration: none;
+}
